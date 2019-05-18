@@ -57,6 +57,7 @@ app.use('/register', register.router);
 app.use('/profile', profile.router);
 app.use('/singleRecipe', singleRecipe.router);
 app.use('/register', register.router);
+
 //Connect DB
 mongoose.connect(URI,
     {useNewUrlParser: true}, (err) => {
