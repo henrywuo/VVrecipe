@@ -1,0 +1,75 @@
+<!-- recipe.ejs -->
+<html>
+    <head>
+        <% include ./partials/header.ejs %>
+        <link rel='stylesheet' type="text/css"  href='/css/recipe_page.css'>
+        <script type="text/javascript" src="/js/recipe.js"></script>   
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
+    </head>
+    <body>
+        <% include ./partials/navbar.ejs %>
+        <h1> Recipes </h1>
+
+        <div class='search-recipe'>
+          <input id="search-box" type="text" size="20" />
+          <button id="recipe-button">Search Food</button>
+      </div>
+      <script id="recipe-query" type="text/x-handlebars-template">
+        <div class='single-recipe'>
+          <div class='single-recipe-left'>
+              <div class='image-container'>
+                  <img class='post-image' src="/image/{{image.data}}"/>
+              </div>
+          </div>
+          <div class='single-recipe-right'>
+            <h2 style='text-align: center; padding-bottom: 20px;  '>{{name}}</h2>
+            <div class='single-recipe-right-entry'>
+              <h4 style='text-align: center;'>Ingredients</h4>
+              <ul>
+                {{ingredients}}
+              </ul>
+            </div>
+            <div class='single-recipe-right-entry'>
+                <h4 style='text-align: center;'>Recipe</h4>
+                <ul>
+                  {{recipe}}
+                </ul>
+              </div>
+          </div>
+        </div>
+      </script>
+
+      <div id='query-list'>
+
+      </div>
+
+      <% posts.forEach( (p) => { %>
+            <div class='single-recipe'>
+                <div class='single-recipe-left'>
+                    <div class='image-container'>
+                        <img class='post-image' src="/image/<%=p.image.data%>"/>
+                    </div>
+                </div>
+              <div class='single-recipe-right'>
+                <h2 style='text-align: center; padding-bottom: 20px;  '><%=p.name%></h2>
+                <div class='single-recipe-right-entry'>
+                  <h4 style='text-align: center;'>Ingredients</h4>
+                  <ul>
+                    <% p.ingredients[0].split(', ').forEach( (i) => { %>
+                        <li><%=i%></li>
+                    <% }); %>
+                  </ul>
+                </div>
+                <div class='single-recipe-right-entry'>
+                    <h4 style='text-align: center;'>Recipe</h4>
+                    <ul>
+                      <% p.recipe.forEach( (s) => { %>
+                          <li><%=s%></li>
+                      <% }); %>
+                    </ul>
+                  </div>
+              </div>
+            </div>
+      <%})%>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+#register-left {
+    float: left;
+    width: 50%;
+    height: 100%;
+    background-color: #d2e7d6;
+    z-index: -1;
+}
+
+#register-right {
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #f8f9fa!important;;
+    z-index: -1;
+    float: left;
+}
