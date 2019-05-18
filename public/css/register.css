@@ -4,6 +4,7 @@
     height: 100%;
     background-color: #d2e7d6;
     z-index: -1;
+    padding: 20px;
 }
 
 #register-right {
@@ -13,4 +14,5 @@
     background-color: #f8f9fa!important;;
     z-index: -1;
     float: left;
+    padding: 20px;
 }
