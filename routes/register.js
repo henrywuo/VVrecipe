@@ -49,6 +49,26 @@ router.post('/register', function (req, res) {
     
 });
 
+router.post('/login', (req, res) => {
+    User.getUser(req.body.username, (err, user) => {
+        if (err) throw err;
+
+        if (!user) return done(null, false, {message: 'Unknown User'});
+
+        User.comparePassword(req.body.password, user.password, (err, matches) => {
+            if (err) throw err;
+
+            if (matches) {
+                req.session.user = user;
+                console.log('successfully logged in');
+                res.redirect('/');
+            } else {
+                res.redirect('/register');
+            };
+        });
+    });
+});
+
 module.exports = {
     router: router
 }

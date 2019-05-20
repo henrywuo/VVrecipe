@@ -23,9 +23,14 @@
                 <input type="text" placeholder="Search.." name="search">
                 <button type="submit"><i class="fa fa-search"></i></button>
               </form> -->
-
-            <button onclick='location.href="register"'>Log In</button>
-            <button onclick='location.href="register"' style='margin-right: 40px;'>Sign Up</button>
+            <% if (!user) { %>
+              <button onclick='location.href="register"'>Log In</button>
+              <button onclick='location.href="register"' style='margin-right: 40px;'>Sign Up</button>
+            <% } else { %>
+              <h3><%=user%></h3>
+              <a class='nav-link' href='/profile/logout'>Logout</a>
+            <% } %> 
+            
           </span>
         </div>
       </nav>
