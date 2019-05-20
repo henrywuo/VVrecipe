@@ -132,6 +132,10 @@ router.get('/post/:filename', (req, res) => {
     });
 });
 
+router.post('/comment', (req,res) => {
+  
+});
+
 module.exports = {
     router: router
 }

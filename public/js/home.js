@@ -49,3 +49,7 @@ $(document).ready(() => {
     //     // modal.find('.modal-title').text('Create a Recipe')
     //   })
 });
+
+function isEmpty() {
+    return !($('.post-comment').val()) ? false : true;
+}

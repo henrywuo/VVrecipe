@@ -42,34 +42,35 @@
       <div id='query-list'>
 
       </div>
-
-      <% posts.forEach( (p) => { %>
-            <div class='single-recipe'>
-                <div class='single-recipe-left'>
-                    <div class='image-container'>
-                        <img class='post-image' src="/image/<%=p.image.data%>"/>
-                    </div>
-                </div>
-              <div class='single-recipe-right'>
-                <h2 style='text-align: center; padding-bottom: 20px;  '><%=p.name%></h2>
-                <div class='single-recipe-right-entry'>
-                  <h4 style='text-align: center;'>Ingredients</h4>
-                  <ul>
-                    <% p.ingredients[0].split(', ').forEach( (i) => { %>
-                        <li><%=i%></li>
-                    <% }); %>
-                  </ul>
-                </div>
-                <div class='single-recipe-right-entry'>
-                    <h4 style='text-align: center;'>Recipe</h4>
+      <div class='all-recipes'>
+        <% posts.forEach( (p) => { %>
+              <div class='single-recipe'>
+                  <div class='single-recipe-left'>
+                      <div class='image-container'>
+                          <img class='post-image' src="/image/<%=p.image.data%>"/>
+                      </div>
+                  </div>
+                <div class='single-recipe-right'>
+                  <h2 style='text-align: center; padding-bottom: 20px;  '><%=p.name%></h2>
+                  <div class='single-recipe-right-entry'>
+                    <h4 style='text-align: center;'>Ingredients</h4>
                     <ul>
-                      <% p.recipe.forEach( (s) => { %>
-                          <li><%=s%></li>
+                      <% p.ingredients[0].split(', ').forEach( (i) => { %>
+                          <li><%=i%></li>
                       <% }); %>
                     </ul>
                   </div>
+                  <div class='single-recipe-right-entry'>
+                      <h4 style='text-align: center;'>Recipe</h4>
+                      <ul>
+                        <% p.recipe.forEach( (s) => { %>
+                            <li><%=s%></li>
+                        <% }); %>
+                      </ul>
+                    </div>
+                </div>
               </div>
-            </div>
-      <%})%>
+        <%})%>
+      </div>
     </body>
 </html>
