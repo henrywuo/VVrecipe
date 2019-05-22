@@ -23,11 +23,17 @@
                 <input type="text" placeholder="Search.." name="search">
                 <button type="submit"><i class="fa fa-search"></i></button>
               </form> -->
+              <div class='search-recipe'>
+                  <input id="search-box" type="text" size="20" />
+                  <!-- <img id='search-box-img' src="" /> -->
+                  <button id="recipe-button">Search Food</button>
+                  <div id='food-title'></div>
+              </div>
             <% if (!user) { %>
               <button onclick='location.href="register"'>Log In</button>
               <button onclick='location.href="register"' style='margin-right: 40px;'>Sign Up</button>
             <% } else { %>
-              <h3><%=user%></h3>
+              <h3 href='profile'><%=user%></h3>
               <a class='nav-link' href='/profile/logout'>Logout</a>
             <% } %> 
             

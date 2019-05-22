@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Post = require('../models/post').post;
+const Post = require('../models/post');
 const path = require('path');
 const fs = require('fs');
 const mongoose = require('mongoose');
@@ -72,6 +72,7 @@ router.post('/upload', upload.single('file'), (req, res) => {
   const year = date.getFullYear();
   const d = `${month}/${day}/${year}`;
   const postData = {
+      user: req.session.user._id,
       name: name,
       image: {
         data: req.file.filename,
@@ -97,7 +98,7 @@ router.post('/upload', upload.single('file'), (req, res) => {
     {safe: true, upsert: true, new: true},
     (err, model) => {
       if (err) throw err;
-    });
+  });
   res.redirect('/');
 });
   
@@ -161,6 +162,18 @@ router.post('/:id/comment', (req,res) => {
     (err, model) => {
       if (err) throw err;
     });
+  res.redirect('/');
+});
+
+router.post('/:id/save', (req, res) => {
+  const user = req.session.user;
+  User.findByIdAndUpdate(
+    {_id: user._id},
+    {$push : {saved: req.params.id}},
+    {safe: true, upsert: true, new: true},
+    (err, model) => {
+      if (err) throw err;
+  });
   res.redirect('/');
 });
 

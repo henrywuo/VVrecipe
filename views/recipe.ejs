@@ -10,9 +10,9 @@
         <% include ./partials/navbar.ejs %>
         <h1> Recipes </h1>
 
-        <div class='search-recipe'>
-          <input id="search-box" type="text" size="20" />
-          <button id="recipe-button">Search Food</button>
+      <div class='recipe-search-recipe'>
+        <input id="recipe-search-box" type="text" size="20" />
+        <button id="recipe-search-button">Search Food</button>
       </div>
       <script id="recipe-query" type="text/x-handlebars-template">
         <div class='single-recipe'>
@@ -62,7 +62,7 @@
                   </div>
                   <div class='single-recipe-right-entry'>
                       <h4 style='text-align: center;'>Recipe</h4>
-                      <ul>
+                      <ul class='recipe-list'>
                         <% p.recipe.forEach( (s) => { %>
                             <li><%=s%></li>
                         <% }); %>

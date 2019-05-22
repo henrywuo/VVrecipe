@@ -41,15 +41,15 @@ footer a {
     text-align: center;
 }
 
-
-
-
-
-
-
-
-
-
+.main {
+    background: #fff;
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    margin: 100px 50px 100px;
+    border-radius: 6px;
+    box-shadow: 0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12), 0 8px 10px -5px rgba(0,0,0,.2);
+}
 
 /* Style inputs */
 input[type=text], select {
@@ -78,3 +78,18 @@ input[type=text], select {
   input[type=submit]:hover {
     background-color: #45a049;
   }
+
+  
+.search-recipe {
+    position: absolute;
+    right: 200px;
+}
+
+#search-box {
+    float: left;
+}
+
+#recipe-button {
+    float: right;
+    margin-top: -50px;
+}
