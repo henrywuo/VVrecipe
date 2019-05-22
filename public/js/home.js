@@ -51,5 +51,5 @@ $(document).ready(() => {
 });
 
 function isEmpty() {
-    return !($('.post-comment').val()) ? false : true;
+    return !($('.post-comment').val().length) ? false : true;
 }

@@ -95,15 +95,20 @@ html, body {
 }
 
 .post-button-entry {
-    width: 33%;
+    width: 30%;
     float: left;
     font-size: 22px;
     text-align: center;
+    background-color: rgb(231, 231, 231);
+    border-radius: 10px;
+    margin: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .post-button-entry:hover {
     cursor: pointer;
-    background-color: rgb(231, 231, 231);
+    background-color: rgb(216, 216, 216);
     border-radius: 10px;
 }
 
@@ -128,6 +133,7 @@ html, body {
     background-color: rgb(230, 230, 230);
     margin: 0px 0px 10px 5px;
     width: 85%;
+    min-height: 35px;
     word-wrap: break-word;
     text-decoration: none;
     display: inline-block;

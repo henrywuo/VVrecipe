@@ -177,26 +177,21 @@
                     </div>
                     <hr>
                         <div class='post-comments'>
-                                <div class='comment-single'>
-                                        <img class='comment-user-pic' src='/pics/user.png'/>
-                                        <a class='comment-body'>comment #1</a>
-                                </div>
-                                <div class='comment-single'>
-                                        <img class='comment-user-pic' src='/pics/user.png'/>
-                                        <a class='comment-body'>comment #2</a>
-                                </div>
+                            <% if (p.comments.length === 0) { %>
+                                <p style='text-align: center; color: rgb(88, 88, 88)'>No comments.</p>
+                            <% } %>
                             <% p.comments.forEach( (comment) => { %>
                                 <div class='comment-single'>
-                                    <img class='comment-pic' src='/pics/user.png'/>
-                                    <a class='comment-body'>test</a>
+                                    <img class='comment-user-pic' src='/pics/user.png'/>
+                                    <a class='comment-body'><%=comment.body%></a>
                                 </div>
                             <%}); %>
                         </div>
                         <div class='comment-form'>
-                        <form action="/comment" method="POST">
-                            <textarea class="post-comment" id="comments" name="comments" type="text" placeholder="Enter a comment"></textarea>
-                            <button class="comment-button" onclick="return isEmpty()">Reply</button>
-                          </form>
+                            <form action="/<%= p._id%>/comment" method="POST">
+                                <textarea class="post-comment" id="comment" name="comment" type="text" placeholder="Enter a comment"></textarea>
+                                <button class="comment-button">Reply</button>
+                            </form>
                         </div>
                   </div>
             </div>
