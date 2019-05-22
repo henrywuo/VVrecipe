@@ -7,15 +7,17 @@ router.get('/', (req, res) => {
         const user = req.session.user;
         Post.find({ _id: { $in : user.saved}}, (err, s) => {
             if (err) return next(err);
-            res.render('profile', {
-                user: user.username,
-                first: user.firstName,
-                last: user.lastName,
-                image: user.image,
-                bio: user.bio,
-                recipes: user.recipes,
-                saved: s,
-                likes: user.likes
+            Post.find({ _id : { $in : user.recipes}}, (err, r) => {
+                res.render('profile', {
+                    user: user.username,
+                    first: user.firstName,
+                    last: user.lastName,
+                    image: user.image,
+                    bio: user.bio,
+                    recipes: r,
+                    saved: s,
+                    likes: user.likes
+                });
             });
         });
         

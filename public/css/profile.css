@@ -20,4 +20,17 @@
 
 .profile {
     text-align: center;
+    height: 200px;
+}
+
+.profile-section {
+    text-align: center;
+    float: left;
+    width: 33%;
+    height: 800px;
+    box-shadow: 0 5px 15px -8px rgba(0,0,0,.24), 0 8px 10px -5px rgba(0,0,0,.2);
+}
+
+.profile-name {
+    margin-top: -50px;
 }
