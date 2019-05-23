@@ -37,4 +37,9 @@ $(document).ready(() => {
             $('.all-recipes').show();
         }
     });
+
+    $('.post-image').click(() => {
+        // console.log('clicked');
+        // $(this).parents().eq(2).find('#show-single-recipe').removeClass('recipe-hidden');
+    });
 });

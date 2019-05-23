@@ -6,11 +6,11 @@
     <link rel='stylesheet' type="text/css" href='/css/home.css'>
     <script type="text/javascript" src="/js/home.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <% include ./partials/navbar.ejs %>
 </head>
 
 <body>
     <div class='home-container'>
-            <% include ./partials/navbar.ejs %>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
             data-whatever="@mdo">Upload Recipe</button>
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -127,7 +127,7 @@
                 </div>
             </div>
         </div>
-        <!-- <div class='all-posts'>
+        <div class='all-posts'>
             <% posts.reverse().forEach(p => { %>
             <div class='post-container'>
                 <div class='post'>
@@ -177,7 +177,7 @@
             </div>
         </div>
         <% }); %>
-    </div> -->
+    </div>
 
 
 
