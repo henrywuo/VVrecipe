@@ -27,6 +27,10 @@ footer, a {
     font-family: 'Montserrat', sans-serif;
 }
 
+.navbar-margin {
+    display: inline!important;
+}
+
 
 .nav-single:hover {
     border-bottom: 2px solid currentColor;
