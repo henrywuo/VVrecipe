@@ -69,8 +69,8 @@ footer, a {
 
 /* Style inputs */
 input[type=text], select {
-    width: 100%;
-    padding: 12px 20px;
+    width: 80%;
+    padding: 5px 10px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
