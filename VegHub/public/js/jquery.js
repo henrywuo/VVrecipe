@@ -13,6 +13,7 @@ $(document).ready(() => {
         $('#instructions #single-instruction:last').remove();
         $('#instructions br:last').remove();
     });
+
 });
 
 function show(i) {

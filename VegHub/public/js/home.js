@@ -1,8 +1,7 @@
 $(document).ready(() => {
 
-    $('.recipe-post-button').click(() => {
-        
-    });
+    $('.unfavorite-btn').hide();
+
 });
 
 function isEmpty() {

@@ -47,7 +47,7 @@
                     <% let i = 0; %>
                     <% saved.forEach( (p) => { %>
                         <div class='show-single-recipe<%=i%> recipe-hover recipe-hidden'>
-                                <% include ./partials/recipe-page.ejs %>
+                                <% include ./partials/profile-favorite.ejs %>
                             </div>
                         <img class='profile-recipe-image' src="/image/<%=p.image.data%>" onclick='show(<%=i%>)'/>
                         <% i++; %>

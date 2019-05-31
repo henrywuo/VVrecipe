@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
         const user = req.session.user;
         User.findById(user._id, (err, u) => {
             Post.find({ _id: { $in : u.saved}}, (err, s) => {
-                if (err) return next(err);
+                if (err) throw err;
                 Post.find({ _id : { $in : user.recipes}}, (err, r) => {
                     res.render('profile', {
                         user: user.username,
@@ -27,6 +27,7 @@ router.get('/logout', (req, res) => {
     req.session.user = null;
     res.redirect('/');
 });
+
 
 module.exports = {
     router: router

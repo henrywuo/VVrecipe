@@ -21,8 +21,9 @@
                             <button class='post-btn btn btn-light' type='submit'>Share</button>
                     </div> -->
                     <div class='post-button-entry'>
-                        <form action='/<%= p._id %>/save' method="POST">
-                            <button class='post-btn btn btn-light' type='submit'>Favorite</button>
+                        <input type='hidden' class='id-hidden' value='<%=p._id%>'/>
+                        <form action='/<%= p._id %>/save' class='favorite-form' method="POST">
+                            <button class='post-btn btn btn-light favorite-btn' type='submit'>Favorite</button>
                         </form>
                     </div>
                     <!-- <div class='post-button-entry'>

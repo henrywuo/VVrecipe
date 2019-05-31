@@ -43,6 +43,8 @@ $(document).ready(() => {
             $('.all-recipes').show();
         }
     });
+
+    $('.unfavorite-btn').hide();
 });
 
 function show(i) {

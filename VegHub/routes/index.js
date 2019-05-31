@@ -119,7 +119,6 @@ router.post('/files/:id', (req, res) => {
 router.get('/uploads/:file', (req, res) => {
     // console.log(path.join(__dirname,req.path));
     const dir = '..' + req.path;
-    console.log('PATH: ' + dir);
     var bitmap = fs.readFileSync(dir);
     req.path = new Buffer(bitmap).toString('base64');
     res.send(req);
@@ -167,7 +166,7 @@ router.post('/:id/comment', (req,res) => {
 
 router.post('/:id/save', (req, res) => {
   const user = req.session.user;
-  User.findByIdAndUpdate(
+  User.updateOne(
     {_id: user._id},
     {$push : {saved: req.params.id}},
     {safe: true, upsert: true, new: true},
@@ -175,6 +174,21 @@ router.post('/:id/save', (req, res) => {
       if (err) throw err;
   });
   res.redirect('/');
+});
+
+router.post('/:id/delete', (req,res) => {
+  const user = req.session.user;
+  User.findById(
+    {_id: user._id}, (err, u) => {
+      User.updateOne(
+        {_id : u._id}, 
+        {$pull : {saved : req.params.id}},
+        {safe: true, upsert: true, new: true},
+        (err, model) => {
+        if (err) throw err;
+      });
+      res.redirect('/profile');
+    });
 });
 
 router.post('/search', (req, res) => {

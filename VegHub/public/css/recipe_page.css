@@ -43,10 +43,9 @@ body {
 
 .single-recipe {
     width: 1200px;
-    padding: 20px;
     margin: 0 auto;
     min-height: 500px;
-    max-height: 600px;
+    max-height: 540px;
 }
 
 .single-recipe-left {
@@ -65,6 +64,7 @@ body {
     max-height: 540px;
     padding: 20px 20px 5px 20px;
     text-align: center;
+    border-bottom: 2px solid rgb(233, 233, 233);
 }
 
 .post-image {

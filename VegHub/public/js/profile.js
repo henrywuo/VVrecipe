@@ -12,4 +12,7 @@ $(document).ready(() => {
         $('.profile-saved').show();
         $('.profile-recipe').hide();
     });
+
+    $('.favorite-btn').hide();
+    $('.unfavorite-btn').show();
 }); 
