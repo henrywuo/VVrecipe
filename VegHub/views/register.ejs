@@ -5,6 +5,8 @@
         <link rel='stylesheet' type="text/css" href='/css/register.css'>
     </head>
     <body>
+            <% include ./partials/navbar.ejs %>
+
         <div id='register-left'>
             <h1>Login</h1>
                 <form class="form" action="/register/login" method="post">
@@ -13,7 +15,7 @@
                         <input class="u-full-width" type="text" id="username" name="username" autocomplete="off">
                         <label for="password">Password</label>
                         <input class="u-full-width" type="password" name="password" autocomplete="off">
-                        <button class="button-primary">Login</button>
+                        <button class="btn btn-secondary button-primary">Login</button>
                     </div>
                 </form>
         </div>
@@ -31,11 +33,11 @@
                     <input class="u-full-width" type="password" name="password" autocomplete="off">
                     <label for="password">Confirm Password</label>
                     <input class="u-full-width" type="password" name="password2" autocomplete="off">
-                    <button class="button-primary">Register</button>
+                    <button class=" btn btn-secondary button-primary">Register</button>
                 </div>
             </form>
         </div>
 
-        
+
     </body>
 </html>

@@ -1,3 +1,7 @@
+/* profile.js handles the http requests for the profile page. It will send
+MongoDB information, such as the user, any posts that they may have
+saved/favorited, and recipes that they have uploaded. */
+
 const express = require('express');
 const router = express.Router();
 const Post = require('../models/post');

@@ -1,3 +1,7 @@
+/* app.js is the main file to start the server and set the routers for each webpage.
+It sets the view engine to ejs, since that is the file type we are using for our
+html pages. We are using express session to handle user logins. */
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');

@@ -1,3 +1,5 @@
+/* register.css handles the styling elements of the register page. */
+
 #register-left {
     float: left;
     width: 50%;
@@ -15,4 +17,8 @@
     z-index: -1;
     float: left;
     padding: 20px;
+}
+
+input {
+    border-radius: 5px;
 }

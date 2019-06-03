@@ -1,6 +1,7 @@
+/* recipe_page.css handles the styling elements of the recipe page. It handles
+the cards that are styled for each single recipe. */
+
 /* RECIPE PAGE */
-body {
-}
 
 .recipe-image {
     content:url(https://vegvoyages.com/wp-content/uploads/2018/06/fullsizeoutput_784.jpeg);
@@ -123,3 +124,8 @@ body {
 .get-recipe-btn {
     bottom: 5px;
 }
+
+.recipe-container {
+    padding: 10px;
+}
+

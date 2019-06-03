@@ -1,3 +1,7 @@
+/* index.js handles all the http requests for the home page. It also displays
+the images in home.ejs by storing images in MongoDB using GridFS. It also
+handles when a user uploads a post in the form of a post request.*/
+
 const express = require('express');
 const router = express.Router();
 const Post = require('../models/post');

@@ -1,3 +1,7 @@
+/* jquery.js handles the client-side js for all webpages. It handles things
+such as adding/deleting recipes in the list when uploading and showing/hiding
+recipes when they are clicked on. */
+
 $(document).ready(() => {
     $('.add-recipe-button').click(() => {
         const div = document.getElementById("instructions");

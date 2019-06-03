@@ -1,3 +1,7 @@
+/* MongoDB model that stores User information. The User model will store
+information such as username, first and last name, password, images, biography,
+recipes uploaded by the user, likes, and saved recipes. */
+
 var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
 

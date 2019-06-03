@@ -15,12 +15,14 @@
                     <div class='post-button-entry'>
                             <button class='post-btn btn btn-light' type='submit'>Share</button>
                     </div> -->
-                    <div class='post-button-entry'>
-                        <input type='hidden' class='id-hidden' value='<%=p._id%>'/>
-                        <form action='/<%= p._id %>/save' class='favorite-form' method="POST">
-                            <button class='favorite-btn post-btn btn btn-light' type='submit'>Favorite</button>
-                        </form>
-                    </div>
+                    <% if (user) { %>
+                        <div class='post-button-entry'>
+                            <input type='hidden' class='id-hidden' value='<%=p._id%>'/>
+                            <form action='/<%= p._id %>/save' class='favorite-form' method="POST">
+                                <button class='favorite-btn post-btn btn btn-light' type='submit'>Favorite</button>
+                            </form>
+                        </div>
+                    <% } %>
             </div>
             <hr>
             <ul class='recipe-steps' id='scrollbar'>

@@ -1,3 +1,7 @@
+/* recipe.js handles all of the http requests for the recipe page. It
+handles the requests for the search box when a user wants to search for
+a certain recipe.*/
+
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');

@@ -1,3 +1,8 @@
+/* register.js handles the http requests for the registration page. It will
+check when a user either logs in or registers for a new account.
+It validates the credentials when a user tries to log in, and redirects the 
+user to the home page if successful. */
+
 const express = require('express');
 const router = express.Router();
 const User = require('../models/user');

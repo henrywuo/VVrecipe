@@ -9,73 +9,41 @@
     <body>
         <% include ./partials/navbar.ejs %>
         <% include ./partials/upload.ejs %>
-
+      <div class='recipe-container'>
         <h1> Recipes </h1>
-      
-      <div class='recipe-search-recipe'>
-        <input id="recipe-search-box" type="text" size="20" />
-        <button id="recipe-search-button">Search Food</button>
-      </div>
-      <script id="recipe-query" type="text/x-handlebars-template">
-        <div class='single-recipe'>
-          <div class='single-recipe-left'>
-              <div class='image-container'>
-                  <img class='post-image' src="/image/{{image.data}}"/>
-              </div>
-          </div>
-          <div class='single-recipe-right'>
-            <h2 style='text-align: center; padding-bottom: 20px;  '>{{name}}</h2>
-            <div class='single-recipe-right-entry'>
-              <h4 style='text-align: center;'>Ingredients</h4>
-              <ul id='scrollbar'>
-                {{#each ingredients}}
-                  <li>{{this}}</li>
-                {{/each}}
-              </ul>
-            </div>
-            <!-- <div class='single-recipe-right-entry'>
-                <h4 style='text-align: center;'>Recipe</h4>
-                <ul>
-                  {{#each recipe}}
-                    <li>{{this}}</li>
-                  {{/each}}
-                </ul>
-            </div> -->
-          </div>
+        
+        <div class='recipe-search-recipe'>
+          <input class="form-control" placeholder="Search for a recipe..." id="recipe-search-box" type="text" size="20" />
+          <button class='btn btn-secondary' id="recipe-search-button">Search Food</button>
         </div>
-      </script>
 
-      <div id='query-list'>
-
-      </div>
-
-      <div class='all-recipes'>
-        <% var i = 0; %>
-        <% posts.forEach( (p) => { %>
-          <div class='show-single-recipe<%=i%> recipe-hover recipe-hidden'>
-              <% include ./partials/recipe-page.ejs %>
-          </div>
-          <div class='single-recipe'>
-              <div class='single-recipe-left' onclick='show(<%=i%>)'>
-                  <div class='image-container'>
-                      <img class='post-image' src="/image/<%=p.image.data%>"/>
-                  </div>
-              </div>
-            <div class='single-recipe-right' id='scrollbar'>
-              <h2 style='text-align: center; padding-bottom: 20px;  '><%=p.name%></h2>
-                <h3>Ingredients</h3>
-                <ul class='ingredients'>
-                  <% p.ingredients[0].split(', ').forEach( (ing) => { %>
-                      <li><%=ing%></li>
-                  <% }); %>
-                </ul>
-                <button class='btn btn-info get-recipe-btn' onclick='show(<%=i%>)'>Get Recipe</button>
+        <div class='all-recipes'>
+          <% var i = 0; %>
+          <% posts.forEach( (p) => { %>
+            <div class='show-single-recipe<%=i%> recipe-hover recipe-hidden'>
+                <% include ./partials/recipe-page.ejs %>
             </div>
-          </div>
-          <%i++;%>
-      <%})%>
-    </div>
-
+            <div class='single-recipe recipe<%=i%>'>
+                <div class='single-recipe-left' onclick='show(<%=i%>)'>
+                    <div class='image-container'>
+                        <img class='post-image' src="/image/<%=p.image.data%>"/>
+                    </div>
+                </div>
+              <div class='single-recipe-right' id='scrollbar'>
+                <h2 style='text-align: center; padding-bottom: 20px;  '><%=p.name%></h2>
+                  <h3>Ingredients</h3>
+                  <ul class='ingredients'>
+                    <% p.ingredients[0].split(', ').forEach( (ing) => { %>
+                        <li><%=ing%></li>
+                    <% }); %>
+                  </ul>
+                  <button class='btn btn-info get-recipe-btn' onclick='show(<%=i%>)'>Get Recipe</button>
+              </div>
+            </div>
+            <%i++;%>
+        <%})%>
+      </div>
+      </div>
       <% include ./partials/footer.ejs %>
 
     </body>
