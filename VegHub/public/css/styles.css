@@ -122,6 +122,7 @@ input[type=text], select {
 .search-recipe {
     position: absolute;
     right: 200px;
+    bottom: 10%;
 }
 
 #search-box {
@@ -130,7 +131,8 @@ input[type=text], select {
 
 #recipe-button {
     float: right;
-    margin-top: -50px;
+    padding: 14px 15px;
+    margin-top: -57px;
 }
 
 /* POST */
@@ -223,15 +225,6 @@ input[type=text], select {
     float: left;
 }
 
-/* .post-button-entry:hover {
-    cursor: pointer;
-    background-color: rgb(216, 216, 216);
-    border-radius: 10px;
-} */
-
-.post-like {
-
-}
 
 .post-comment {
     width: 100%;

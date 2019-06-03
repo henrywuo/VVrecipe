@@ -1,4 +1,8 @@
 <!-- recipe.ejs -->
+
+<!-- Creates the recipe pages. The recipe page is different to the homepage in that it is the place where all the recipe is contain
+  vs the home page where it will only show the most recent recipe posted by users. The recipe page also shows the ingrediants and steps to make the food. -->
+
 <html>
     <head>
         <% include ./partials/header.ejs %>
@@ -11,10 +15,29 @@
         <% include ./partials/upload.ejs %>
       <div class='recipe-container'>
         <h1> Recipes </h1>
-        
-        <div class='recipe-search-recipe'>
-          <input class="form-control" placeholder="Search for a recipe..." id="recipe-search-box" type="text" size="20" />
-          <button class='btn btn-secondary' id="recipe-search-button">Search Food</button>
+      
+      <div class='recipe-search-recipe'>
+        <input id="recipe-search-box" type="text" size="20" />
+        <button id="recipe-search-button">Search Food</button>
+      </div>
+      <script id="recipe-query" type="text/x-handlebars-template">
+        <div class='single-recipe'>
+          <div class='single-recipe-left'>
+              <div class='image-container'>
+                  <img class='post-image' src="/image/{{image.data}}"/>
+              </div>
+          </div>
+          <div class='single-recipe-right'>
+            <h2 style='text-align: center; padding-bottom: 20px;  '>{{name}}</h2>
+            <div class='single-recipe-right-entry'>
+              <h4 style='text-align: center;'>Ingredients</h4>
+              <ul id='scrollbar'>
+                {{#each ingredients}}
+                  <li>{{this}}</li>
+                {{/each}}
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div class='all-recipes'>
