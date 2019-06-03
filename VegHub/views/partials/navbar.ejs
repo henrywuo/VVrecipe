@@ -35,7 +35,7 @@
                 </div>
               </form> 
             <% if (!user) { %>
-              <button onclick='location.href="register"' style='margin-right: 40px;'>Sign in</button>
+              <button onclick='location.href="register"' class='btn btn-light' style='margin-right: 40px;'>Sign in</button>
             <% } else { %>
               <h3 onclick="window.location.href='/profile'" style='cursor: pointer;'><%=user%></h3>
               <a class='nav-link' href='/profile/logout'>Logout</a>
