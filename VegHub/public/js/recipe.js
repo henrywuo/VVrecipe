@@ -4,12 +4,6 @@ It also handles the recipe search box directly in the recipe page itself through
 an ajax request. */
 
 $(document).ready(() => {
-    // $(document).on('mouseenter', '#recipe-pic', () => {
-    //     $('.recipe-button').show();
-    // }).on('mouseleave', '#recipe-pic', () => {
-    //     $('.recipe-button').hide();
-    // });
-
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams) {
         $('#recipe-search-box').val(urlParams.get('search'));
@@ -19,7 +13,6 @@ $(document).ready(() => {
     $('#recipe-search-button').click(() => {
         if ($('#recipe-search-box').val().length !== 0) {
             $('#query-list').empty();
-            // const search = '/recipe/search/' + $('#recipe-search-box').val();
             const search = '/allRecipes';
             const string = $('#recipe-search-box').val();
             $.ajax({
@@ -36,7 +29,7 @@ $(document).ready(() => {
                     }
                 }
             });
-        }   
+        }
     });
 
     $('#recipe-search-box').keyup(() => {
